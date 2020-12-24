@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: docker/php
+    volumes: 
+      - ./:/var/www/html
