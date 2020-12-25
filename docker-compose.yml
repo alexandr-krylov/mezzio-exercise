@@ -7,3 +7,20 @@ services:
       - ./:/var/www/html
     ports:
       - "8080:8080"
+  db:
+    image: postgres:13.1
+    environment:
+      POSTGRES_USER: "db_test"
+      POSTGRES_PASSWORD: "db_test"
+      POSTGRES_DB: "db_test"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      - ./docker/postgres/:/docker-entrypoint-initdb.d/
+    ports:
+      - "5434:5432"
+  adminer:
+    image: adminer
+    ports:
+      - 8484:8080
+volumes:
+    dbdata:

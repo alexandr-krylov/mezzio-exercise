@@ -5,6 +5,12 @@ RUN php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024
 RUN php composer-setup.php
 RUN php -r "unlink('composer-setup.php');"
 RUN mv composer.phar /usr/local/bin/composer
+
+RUN apt-get update && apt-get install -y \
+    unzip
+
+#RUN docker-php-ext-install zip
+
 EXPOSE 8080
 
 CMD ["php-fpm"]
