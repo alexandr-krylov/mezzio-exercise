@@ -9,7 +9,7 @@ use Psr\Container\ContainerInterface;
 
 class DbAccessHandlerFactory
 {
-    public function __invoke(ContainerInterface $container) : DbAccessHandler
+    public function __invoke(ContainerInterface $container): DbAccessHandler
     {
         return new DbAccessHandler($container->get(TemplateRendererInterface::class));
     }

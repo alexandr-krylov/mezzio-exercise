@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * bla-bla-bla
+ */
+
 declare(strict_types=1);
 
 use Mezzio\Application;

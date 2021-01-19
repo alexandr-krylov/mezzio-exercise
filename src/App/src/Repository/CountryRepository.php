@@ -2,22 +2,18 @@
 
 namespace App\Repository;
 
-use App\Entity\Country;
 use App\Entity\EntityAbstract;
-use Laminas\Db\Adapter\Adapter;
 use Laminas\Db\ResultSet\ResultSet;
 
 class CountryRepository implements RepositoryInterface
 {
-    
-    function getBy($filter = null)
+    public function getBy(?array $filter = null): ResultSet
     {
-        
         return new ResultSet();
     }
 
-    function persist(EntityAbstract $country)
+    public function persist(EntityAbstract $country): boolean
     {
-
+        return false;
     }
 }

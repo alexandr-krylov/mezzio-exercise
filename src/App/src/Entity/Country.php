@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\CountryRepository;
-
 class Country extends EntityAbstract
 {
     protected $id;

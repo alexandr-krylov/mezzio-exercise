@@ -11,6 +11,11 @@ RUN apt-get update && apt-get install -y \
 
 #RUN docker-php-ext-install zip
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
+RUN echo "xdebug.mode = coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 EXPOSE 8080
 
 CMD ["php-fpm"]
